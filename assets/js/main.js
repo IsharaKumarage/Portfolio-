@@ -101,3 +101,29 @@ document.querySelectorAll('.btn-accent, .nav-btn').forEach(btn => {
     btn.style.transform = 'none';
   });
 });
+
+// ── PDF DOWNLOAD ──
+function downloadPDF() {
+  const element = document.body;
+  const opt = {
+    margin: [0, 0],
+    filename: 'Ishara_Kumarage_Portfolio.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 1.5, useCORS: true, logging: false, letterRendering: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+  
+  const nav = document.getElementById('nav');
+  const scroll = document.getElementById('scroll-progress');
+  const blobs = document.querySelectorAll('.blob-1, .blob-2, .float-icon, #cur, #cur-ring, #cur-glow');
+  
+  if(nav) nav.style.display = 'none';
+  if(scroll) scroll.style.display = 'none';
+  blobs.forEach(b => b.style.display = 'none');
+  
+  html2pdf().set(opt).from(element).save().then(() => {
+    if(nav) nav.style.display = 'flex';
+    if(scroll) scroll.style.display = 'block';
+    blobs.forEach(b => b.style.display = 'block');
+  });
+}

@@ -72,3 +72,32 @@ window.addEventListener('scroll', () => {
   const sp = document.getElementById('scroll-progress');
   if(sp) sp.style.width = scrolled + "%";
 });
+// ── CARD TILT EFFECT ──
+document.querySelectorAll('.edu-card, .cert-card').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const xc = rect.width / 2;
+    const yc = rect.height / 2;
+    const dx = x - xc;
+    const dy = y - yc;
+    el.style.transform = `perspective(1000px) rotateY(${dx / 20}deg) rotateX(${-dy / 20}deg) translateY(-10px)`;
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.transform = 'none';
+  });
+});
+
+// ── MAGNETIC BUTTONS ──
+document.querySelectorAll('.btn-accent, .nav-btn').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'none';
+  });
+});

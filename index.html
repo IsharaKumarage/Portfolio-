@@ -12,8 +12,10 @@
   /* Single-page specific adjustments */
   html { scroll-padding-top: 80px; }
   @media print {
-    nav, #cur, #cur-ring, #cur-glow { display: none !important; }
-    section { page-break-after: always; padding: 40px 20px !important; }
+    nav, #cur, #cur-ring, #cur-glow, .blob-1, .blob-2, .btn-download { display: none !important; }
+    section { page-break-inside: avoid; padding: 20px !important; }
+    .cv-card { box-shadow: none !important; border: 1px solid #eee !important; }
+    body { cursor: default !important; }
     body::before { display: none; }
     .reveal { opacity: 1 !important; transform: none !important; }
   }
@@ -63,7 +65,7 @@
     </div>
     <div class="hero-btns">
       <button class="btn-accent" onclick="window.location.href='#contact'">Let's Talk →</button>
-      <button class="btn-ghost" onclick="window.location.href='#cv'">View Work</button>
+      <button class="btn-ghost" onclick="window.print()">Download PDF</button>
     </div>
   </div>
   <div class="hero-right">
@@ -71,13 +73,13 @@
       <div class="hero-img-ring2"></div>
       <div class="hero-img-ring"></div>
       <div class="hero-img-box">
-        <img src="assets/images/profile.png" alt="Ishara Kumarage"
+        <img src="assets/images/profile.jpg" alt="Ishara Kumarage"
           onerror="this.parentNode.style.background='#120b29';this.style.display='none'">
         <div class="hero-img-overlay"></div>
       </div>
       <div class="hero-img-glow"></div>
       <div class="hero-float-badge">
-        <div class="hfb-num">25</div>
+        <div class="hfb-num">24</div>
         <div class="hfb-lbl">Years old</div>
       </div>
       <div class="hero-float-badge2">
@@ -99,7 +101,7 @@
   <div class="sec-divider"></div>
   <div class="about-wrap">
     <div class="about-img-col reveal">
-      <img src="assets/images/profile.png" alt="Ishara" class="about-img"
+      <img src="assets/images/profile.jpg" alt="Ishara" class="about-img"
         onerror="this.style.background='#120b29';this.style.minHeight='400px'">
       <div class="about-img-glow"></div>
       <div class="about-quote-box">
@@ -112,7 +114,7 @@
       <h2 class="sec-title">Ishara <span>Kumarage</span></h2>
       <p class="sec-sub">I am an enthusiastic individual with a B.Sc (Hons) in Information Technology degree at SLIIT. I am a team player with excellent communication and leadership qualities. Further I am self-motivated and love to learn new skills.</p>
       <div class="about-info-grid">
-        <div class="info-card"><div class="ic-key">Age</div><div class="ic-val">25</div></div>
+        <div class="info-card"><div class="ic-key">Age</div><div class="ic-val">24</div></div>
         <div class="info-card"><div class="ic-key">Phone</div><div class="ic-val">+94 76 430 74 68</div></div>
         <div class="info-card"><div class="ic-key">Email</div><div class="ic-val">isharakumarage027@gmail.com</div></div>
         <div class="info-card"><div class="ic-key">Location</div><div class="ic-val">Colombo, Sri Lanka</div></div>
@@ -238,7 +240,7 @@
   <div class="cv-card reveal d3">
     <div class="cv-left">
       <div class="cv-photo">
-        <img src="assets/images/profile.png" alt="Ishara"
+        <img src="assets/images/profile.jpg" alt="Ishara"
           onerror="this.style.display='none'">
       </div>
       <div class="cv-name">Ishara Kumarage</div>

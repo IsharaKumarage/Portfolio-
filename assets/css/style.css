@@ -1,8 +1,8 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg:#1a0510;
-  --bg2:#260818;
-  --bg3:#360c23;
+  --bg:#0a0206;
+  --bg2:#12040b;
+  --bg3:#1a0610;
   --accent:#ff2a85;
   --accent2:#d6186b;
   --accent-glow:rgba(255,42,133,0.18);

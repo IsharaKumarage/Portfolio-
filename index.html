@@ -454,15 +454,27 @@
         <a class="soc-btn" href="https://github.com/IsharaKumarage" target="_blank">GH</a>
       </div>
     </div>
-    <div class="reveal d3">
+    <form class="reveal d3" action="https://formspree.io/f/mjvnrqbr" method="POST">
       <div class="form-row">
-        <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Enter your name"></div>
-        <div class="form-group"><label class="form-label">Your Email</label><input class="form-input" type="email" placeholder="Enter your email"></div>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" type="text" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Email</label>
+          <input class="form-input" type="email" name="email" placeholder="Enter your email" required>
+        </div>
       </div>
-      <div class="form-group"><label class="form-label">Subject</label><input class="form-input" type="text" placeholder="Enter subject"></div>
-      <div class="form-group"><label class="form-label">Message</label><textarea class="form-ta" placeholder="Type your message here..."></textarea></div>
-      <button class="form-submit">Send Message</button>
-    </div>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input class="form-input" type="text" name="subject" placeholder="Enter subject" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-ta" name="message" placeholder="Type your message here..." required></textarea>
+      </div>
+      <button class="form-submit" type="submit">Send Message</button>
+    </form>
   </div>
 </section>
 

@@ -64,3 +64,11 @@ window.addEventListener('scroll',()=>{
   const imgBox=document.querySelector('.hero-img-box img');
   if(imgBox)imgBox.style.transform=`translateY(${sy*0.08}px)`;
 });
+// Scroll Progress
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  const sp = document.getElementById('scroll-progress');
+  if(sp) sp.style.width = scrolled + "%";
+});

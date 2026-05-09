@@ -7,6 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/images/profile.jpeg" type="image/jpeg">
+<style>
+  /* Single-page specific adjustments */
+  html { scroll-padding-top: 80px; }
+  @media print {
+    nav, #cur, #cur-ring, #cur-glow { display: none !important; }
+    section { page-break-after: always; padding: 40px 20px !important; }
+    body::before { display: none; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+</style>
 </head>
 <body>
 
@@ -18,13 +28,13 @@
 <nav id="nav">
   <div class="nav-logo">IK<span>.</span></div>
   <ul class="nav-links">
-    <li><a href="./">Home</a></li>
-    <li><a href="about/">About</a></li>
-    <li><a href="education/">Education</a></li>
-    <li><a href="career/">Career Plan</a></li>
-    <li><a href="cv/">CV</a></li>
-    <li><a href="certificates/">Certificates</a></li>
-    <li><a href="contact/">Contact</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#career">Career Plan</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-btn" onclick="window.open('assets/docs/cv.pdf', '_blank')">Download CV ↓</button>
 </nav>
@@ -41,8 +51,8 @@
     </h1>
     <p class="hero-sub">I'm Ishara Kumarage — UI/UX &amp; Frontend Developer, Graphic Designer, and Content Creator. Currently a B.Sc (Hons) IT Undergraduate at SLIIT.</p>
     <div class="hero-btns">
-      <button class="btn-accent" onclick="window.location.href='contact/'">Let's Talk →</button>
-      <button class="btn-ghost" onclick="window.location.href='cv/'">View Work</button>
+      <button class="btn-accent" onclick="window.location.href='#contact'">Let's Talk →</button>
+      <button class="btn-ghost" onclick="window.location.href='#cv'">View Work</button>
     </div>
   </div>
   <div class="hero-right">
@@ -68,8 +78,320 @@
   <div class="hero-stats">
     <div class="hstat"><div class="hstat-num">4+</div><div class="hstat-lbl">Years Learning</div></div>
     <div class="hstat"><div class="hstat-num">10+</div><div class="hstat-lbl">Projects Done</div></div>
-    <div class="hstat"><div class="hstat-num">3</div><div class="hstat-lbl">Certificates</div></div>
+    <div class="hstat"><div class="hstat-num">6</div><div class="hstat-lbl">Certificates</div></div>
     <div class="hstat"><div class="hstat-num">100%</div><div class="hstat-lbl">Passion</div></div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="sec-divider"></div>
+  <div class="about-wrap">
+    <div class="about-img-col reveal">
+      <img src="assets/images/profile.jpeg" alt="Ishara" class="about-img"
+        onerror="this.style.background='#120b29';this.style.minHeight='400px'">
+      <div class="about-img-glow"></div>
+      <div class="about-quote-box">
+        <p class="aqb-text">"Design is not just what it looks like and feels like. Design is how it works."</p>
+        <p class="aqb-by">— Steve Jobs</p>
+      </div>
+    </div>
+    <div class="reveal d2">
+      <div class="sec-label">About me</div>
+      <h2 class="sec-title">Ishara <span>Kumarage</span></h2>
+      <p class="sec-sub">I am an enthusiastic individual with a B.Sc (Hons) in Information Technology degree at SLIIT. I am a team player with excellent communication and leadership qualities. Further I am self-motivated and love to learn new skills.</p>
+      <div class="about-info-grid">
+        <div class="info-card"><div class="ic-key">Age</div><div class="ic-val">25</div></div>
+        <div class="info-card"><div class="ic-key">Phone</div><div class="ic-val">+94 76 430 74 68</div></div>
+        <div class="info-card"><div class="ic-key">Email</div><div class="ic-val">isharakumarage027@gmail.com</div></div>
+        <div class="info-card"><div class="ic-key">Location</div><div class="ic-val">Minnana, Getaheththa, Sri Lanka</div></div>
+        <div class="info-card full"><div class="ic-key">LinkedIn</div><div class="ic-val">linkedin.com/in/ishara-kumarage</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education">
+  <div class="sec-divider"></div>
+  <div class="reveal"><div class="sec-label">Education</div></div>
+  <h2 class="sec-title reveal d1">What I Learned in <span>PPW</span></h2>
+  <p class="sec-sub reveal d2">A reflective journal of key skills and insights gained throughout the Professional and Personal Writing module.</p>
+  <div class="edu-grid">
+    <div class="edu-card reveal d1">
+      <div class="edu-card-glow"></div>
+      <div class="edu-num">01</div>
+      <span class="edu-icon">✏️</span>
+      <div class="edu-title">Business Writing</div>
+      <p class="edu-text">I learned how to write professional documents such as proposals, memos, and executive summaries. This improved my ability to organize ideas logically, use the right tone, and format content for business and academic use.</p>
+    </div>
+    <div class="edu-card reveal d2">
+      <div class="edu-card-glow"></div>
+      <div class="edu-num">02</div>
+      <span class="edu-icon">✉️</span>
+      <div class="edu-title">Letter Writing</div>
+      <p class="edu-text">I gained knowledge on the structure and tone of different types of letters including cover letters, inquiry letters, and thank-you notes. This helped me write clear, polite, and well-structured letters for professionals and organizations.</p>
+    </div>
+    <div class="edu-card reveal d3">
+      <div class="edu-card-glow"></div>
+      <div class="edu-num">03</div>
+      <span class="edu-icon">📊</span>
+      <div class="edu-title">Report Writing</div>
+      <p class="edu-text">I learned how to collect, analyze, and present information in a clear and organized way. This includes structuring reports, using data effectively, and summarizing key findings to support decisions and project outcomes.</p>
+    </div>
+    <div class="edu-card reveal d4">
+      <div class="edu-card-glow"></div>
+      <div class="edu-num">04</div>
+      <span class="edu-icon">📧</span>
+      <div class="edu-title">Email Writing</div>
+      <p class="edu-text">I developed skills in writing professional emails with appropriate subject lines, greetings, and tone. I also learned email etiquette and how to communicate respectfully and efficiently in academic and workplace environments.</p>
+    </div>
+    <div class="edu-card reveal d5">
+      <div class="edu-card-glow"></div>
+      <div class="edu-num">05</div>
+      <span class="edu-icon">🎤</span>
+      <div class="edu-title">Language for Presentations</div>
+      <p class="edu-text">I improved my public speaking and presentation skills by learning how to present ideas clearly and confidently. I learned to structure content, use visuals effectively, and engage the audience while maintaining a professional delivery style.</p>
+    </div>
+    <div class="edu-card reveal d6">
+      <div class="edu-card-glow"></div>
+      <div class="edu-num">06</div>
+      <span class="edu-icon">🧠</span>
+      <div class="edu-title">Personal Reflection</div>
+      <p class="edu-text">I became more aware of my communication strengths and areas for improvement. This helped me build confidence, improve self-awareness, and handle communication challenges in both academic projects and real-world situations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CAREER ═══ -->
+<section id="career">
+  <div class="sec-divider"></div>
+  <div class="reveal"><div class="sec-label">Career Plan</div></div>
+  <h2 class="sec-title reveal d1">My Professional <span>Roadmap</span></h2>
+  <p class="sec-sub reveal d2">A clear roadmap to achieve my professional goals and make a meaningful impact in the field of UI/UX and design.</p>
+  <div class="career-tabs-wrap reveal d3">
+    <button class="ctab active" onclick="switchTab(0)">Short Term (0–1 Year)</button>
+    <button class="ctab" onclick="switchTab(1)">Mid Term (1–3 Years)</button>
+    <button class="ctab" onclick="switchTab(2)">Long Term (3–5+ Years)</button>
+  </div>
+  <div class="cpanel active reveal d4" id="p0">
+    <div class="cpanel-left">
+      <div class="cp-icon">🎯</div>
+      <div class="cp-title">Short Term</div>
+      <div class="cp-period">0 – 1 Year</div>
+      <p class="cp-desc">Build a strong foundation, gain practical experience, and grow as a creative professional.</p>
+    </div>
+    <ul class="cp-bullets">
+      <li><span class="cp-dot"></span>Strengthen my skills in UI/UX design, React, and Front-End Development.</li>
+      <li><span class="cp-dot"></span>Continue to deliver impactful digital experiences and graphic designs at Edhirya IT.</li>
+      <li><span class="cp-dot"></span>Expand my knowledge in Digital Marketing and Content Creation.</li>
+      <li><span class="cp-dot"></span>Complete my B.Sc (Hons) in Information Technology at SLIIT with excellent grades.</li>
+    </ul>
+  </div>
+  <div class="cpanel" id="p1">
+    <div class="cpanel-left">
+      <div class="cp-icon">📈</div>
+      <div class="cp-title">Mid Term</div>
+      <div class="cp-period">1 – 3 Years</div>
+      <p class="cp-desc">Expand my expertise, take on greater responsibilities, and contribute to impactful design solutions.</p>
+    </div>
+    <ul class="cp-bullets">
+      <li><span class="cp-dot"></span>Secure a full-time Senior UI/UX or Lead Frontend Developer role.</li>
+      <li><span class="cp-dot"></span>Work on diverse, large-scale e-commerce and mobile application projects.</li>
+      <li><span class="cp-dot"></span>Enhance my skills in user research, advanced interaction design, and modern JavaScript frameworks.</li>
+      <li><span class="cp-dot"></span>Take on leadership opportunities in projects and mentor junior designers and developers.</li>
+    </ul>
+  </div>
+  <div class="cpanel" id="p2">
+    <div class="cpanel-left">
+      <div class="cp-icon">🏔️</div>
+      <div class="cp-title">Long Term</div>
+      <div class="cp-period">3 – 5+ Years</div>
+      <p class="cp-desc">Achieve leadership, create meaningful impact, and build a strong personal brand.</p>
+    </div>
+    <ul class="cp-bullets">
+      <li><span class="cp-dot"></span>Become a Tech Lead or Design Manager driving user-centered solutions in a top-tier firm.</li>
+      <li><span class="cp-dot"></span>Build and grow my personal brand through sharing knowledge, case studies, and content creation.</li>
+      <li><span class="cp-dot"></span>Work on innovative projects that create a positive global impact.</li>
+      <li><span class="cp-dot"></span>Continuously learn, adapt, and explore new opportunities in design and technology.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ CV ═══ -->
+<section id="cv">
+  <div class="sec-divider"></div>
+  <div class="reveal"><div class="sec-label">Curriculum Vitae</div></div>
+  <h2 class="sec-title reveal d1">My <span>CV</span></h2>
+  <p class="sec-sub reveal d2">A comprehensive overview of my education, experience, skills, and achievements.</p>
+  <div class="cv-card reveal d3">
+    <div class="cv-left">
+      <div class="cv-photo">
+        <img src="assets/images/profile.jpeg" alt="Ishara"
+          onerror="this.style.display='none'">
+      </div>
+      <div class="cv-name">Ishara Kumarage</div>
+      <div class="cv-role">UI/UX &amp; Frontend Developer</div>
+      <p class="cv-bio">I am an enthusiastic individual with a B.Sc (Hons) in Information Technology degree at SLIIT. I am a team player with excellent communication and leadership qualities. Further I am self-motivated and love to learn new skills.</p>
+      <div class="cv-div"></div>
+      <div class="cv-sh">Contact</div>
+      <div class="cv-contact-item"><div class="cv-ci-icon">📞</div><div class="cv-ci-txt">076 430 74 66</div></div>
+      <div class="cv-contact-item"><div class="cv-ci-icon">✉️</div><div class="cv-ci-txt">isharakumarage027@gmail.com</div></div>
+      <div class="cv-contact-item"><div class="cv-ci-icon">📍</div><div class="cv-ci-txt">Minnana, Getaheththa, Sri Lanka</div></div>
+      <div class="cv-contact-item"><div class="cv-ci-icon">💼</div><div class="cv-ci-txt">linkedin.com/in/ishara-kumarage</div></div>
+      <div class="cv-div"></div>
+      <div class="cv-sh">Skills</div>
+      <div class="skill-row"><div class="skill-lbl"><span>UI/UX Design</span><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-w="0.95"></div></div></div>
+      <div class="skill-row"><div class="skill-lbl"><span>HTML, CSS, JS</span><span>90%</span></div><div class="skill-track"><div class="skill-fill" data-w="0.90"></div></div></div>
+      <div class="skill-row"><div class="skill-lbl"><span>React</span><span>85%</span></div><div class="skill-track"><div class="skill-fill" data-w="0.85"></div></div></div>
+      <div class="skill-row"><div class="skill-lbl"><span>Graphic Design</span><span>85%</span></div><div class="skill-track"><div class="skill-fill" data-w="0.85"></div></div></div>
+      <div class="skill-row"><div class="skill-lbl"><span>Digital Marketing</span><span>80%</span></div><div class="skill-track"><div class="skill-fill" data-w="0.80"></div></div></div>
+      <div class="skill-row"><div class="skill-lbl"><span>Communication</span><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-w="0.95"></div></div></div>
+    </div>
+    <div class="cv-right">
+      <div class="cv-section">
+        <div class="cv-sh">Education</div>
+        <div class="cv-item">
+          <div class="cv-it">B.Sc (Hons) in Information Technology</div>
+          <div class="cv-is">Sri Lanka Institute of Information Technology (SLIIT)</div>
+          <div class="cv-id">Sep 2021 – Present</div>
+        </div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-sh">Experience</div>
+        <div class="cv-item">
+          <div class="cv-it">UI/UX Designer &amp; Front-End Developer</div>
+          <div class="cv-is">Edhirya IT · Part-time</div>
+          <div class="cv-id">Feb 2024 – Present</div>
+          <ul class="cv-ib">
+            <li>Working as a trainee front end developer utilizing HTML, CSS, JavaScript, and React.</li>
+            <li>Creating wireframes, mockup designs, and prototypes for various projects.</li>
+            <li>Executing digital marketing initiatives alongside graphic design responsibilities.</li>
+          </ul>
+        </div>
+        <div class="cv-item">
+          <div class="cv-it">Content Creator &amp; Graphic Designer</div>
+          <div class="cv-is">Career Center SLIIT · Part-time</div>
+          <div class="cv-id">Jul 2023 – Present</div>
+          <ul class="cv-ib">
+            <li>Creating and editing video content for the Official TikTok account of the Career Center SLIIT.</li>
+          </ul>
+        </div>
+        <div class="cv-item">
+          <div class="cv-it">SMM Trainee &amp; Graphic Designer</div>
+          <div class="cv-is">Edhirya IT</div>
+          <div class="cv-id">Aug 2023 – Feb 2024</div>
+        </div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-sh">Projects &amp; Volunteering</div>
+        <div class="cv-item">
+          <div class="cv-it">E-Commerce Web and Mobile App Design</div>
+          <div class="cv-is">Ayurvedic Medical Center, Panadura</div>
+          <div class="cv-id">Dec 2023 – Present</div>
+          <p class="cv-ip">Led the UI/UX and graphic design for a comprehensive e-commerce platform.</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-it">Volunteer</div>
+          <div class="cv-is">SLIIT Career Guidance Unit &amp; AIESEC Design Team</div>
+          <div class="cv-id">Feb 2023 – Present</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATES ═══ -->
+<section id="certificates">
+  <div class="sec-divider"></div>
+  <div class="reveal"><div class="sec-label">Certifications</div></div>
+  <h2 class="sec-title reveal d1">My <span>Certificates</span></h2>
+  <p class="sec-sub reveal d2">A collection of certifications representing my commitment to continuous learning and professional growth.</p>
+  <div class="cert-grid">
+    <div class="cert-card reveal d1">
+      <div class="cert-top"><div class="cert-top-glow"></div><span style="position:relative;z-index:1">🏆</span></div>
+      <div class="cert-body">
+        <div class="cert-org">HubSpot Academy</div>
+        <div class="cert-name">Content Marketing Certified</div>
+        <div class="cert-valid">📅 Issued Dec 2023</div>
+        <button class="cert-btn" onclick="window.open('assets/docs/Hubspot Content Marketing Certificate.png', '_blank')">View Certificate ↗</button>
+      </div>
+    </div>
+    <div class="cert-card reveal d2">
+      <div class="cert-top"><div class="cert-top-glow"></div><span style="position:relative;z-index:1">📊</span></div>
+      <div class="cert-body">
+        <div class="cert-org">Google</div>
+        <div class="cert-name">Google Analytics Certification</div>
+        <div class="cert-valid">📅 May 17, 2025 – May 17, 2026</div>
+        <button class="cert-btn" onclick="window.open('assets/docs/Google Analytics Certification.pdf', '_blank')">View Certificate ↗</button>
+      </div>
+    </div>
+    <div class="cert-card reveal d3">
+      <div class="cert-top"><div class="cert-top-glow"></div><span style="position:relative;z-index:1">🎯</span></div>
+      <div class="cert-body">
+        <div class="cert-org">Google</div>
+        <div class="cert-name">Google Ads Display Certification</div>
+        <div class="cert-valid">📅 May 20, 2025 – May 20, 2026</div>
+        <button class="cert-btn" onclick="window.open('assets/docs/Google Ads Display Certification.pdf', '_blank')">View Certificate ↗</button>
+      </div>
+    </div>
+    <div class="cert-card reveal d4">
+      <div class="cert-top"><div class="cert-top-glow"></div><span style="position:relative;z-index:1">🛡️</span></div>
+      <div class="cert-body">
+        <div class="cert-org">Google Garage</div>
+        <div class="cert-name">Digital Marketing Fundamentals</div>
+        <div class="cert-valid">📅 Issued Nov 2023</div>
+        <button class="cert-btn" onclick="window.open('assets/docs/Google Garage Digital Marketing Fundamentals Certificate.pdf', '_blank')">View Certificate ↗</button>
+      </div>
+    </div>
+    <div class="cert-card reveal d5">
+      <div class="cert-top"><div class="cert-top-glow"></div><span style="position:relative;z-index:1">🔍</span></div>
+      <div class="cert-body">
+        <div class="cert-org">HubSpot</div>
+        <div class="cert-name">SEO Certification</div>
+        <div class="cert-valid">📅 Dec 2023</div>
+        <button class="cert-btn" onclick="window.open('assets/docs/Hubspot SEO Certificate.png', '_blank')">View Certificate ↗</button>
+      </div>
+    </div>
+    <div class="cert-card reveal d6">
+      <div class="cert-top"><div class="cert-top-glow"></div><span style="position:relative;z-index:1">📱</span></div>
+      <div class="cert-body">
+        <div class="cert-org">HubSpot</div>
+        <div class="cert-name">Social Media Marketing</div>
+        <div class="cert-valid">📅 Dec 2023</div>
+        <button class="cert-btn" onclick="window.open('assets/docs/Social Media Marketing Certification.png', '_blank')">View Certificate ↗</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="sec-divider"></div>
+  <div class="reveal"><div class="sec-label">Contact</div></div>
+  <h2 class="sec-title reveal d1">Get In <span>Touch</span></h2>
+  <p class="sec-sub reveal d2">I'd love to connect and collaborate on exciting projects. Feel free to reach out anytime!</p>
+  <div class="contact-wrap">
+    <div class="reveal d2">
+      <div class="contact-item"><div class="ci-icon">📞</div><div><div class="ci-key">Phone</div><div class="ci-val">076 430 74 66</div></div></div>
+      <div class="contact-item"><div class="ci-icon">✉️</div><div><div class="ci-key">Email</div><div class="ci-val">isharakumarage027@gmail.com</div></div></div>
+      <div class="contact-item"><div class="ci-icon">📍</div><div><div class="ci-key">Location</div><div class="ci-val">Minnana, Getaheththa, Sri Lanka</div></div></div>
+      <div class="contact-item"><div class="ci-icon">💼</div><div><div class="ci-key">LinkedIn</div><div class="ci-val">linkedin.com/in/ishara-kumarage</div></div></div>
+      <div class="contact-social">
+        <a class="soc-btn" href="https://linkedin.com/in/ishara-kumarage-391592212/" target="_blank">in</a>
+        <a class="soc-btn" href="#" target="_blank">Be</a>
+        <a class="soc-btn" href="#" target="_blank">GH</a>
+      </div>
+    </div>
+    <div class="reveal d3">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Enter your name"></div>
+        <div class="form-group"><label class="form-label">Your Email</label><input class="form-input" type="email" placeholder="Enter your email"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Subject</label><input class="form-input" type="text" placeholder="Enter subject"></div>
+      <div class="form-group"><label class="form-label">Message</label><textarea class="form-ta" placeholder="Type your message here..."></textarea></div>
+      <button class="form-submit">Send Message</button>
+    </div>
   </div>
 </section>
 

@@ -468,6 +468,34 @@ section{padding:110px 64px;position:relative;z-index:1;}
 .cv-ip{font-size:12px;color:var(--muted);line-height:1.7;font-weight:300;}
 .cv-ib{list-style:none;}
 .cv-ib li{font-size:12px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:4px;}
+.cv-link{
+  display:inline-block;
+  margin-top:14px;
+  font-size:12px;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding:4px 0;
+  border-bottom:1px solid transparent;
+}
+.cv-link:hover{
+  color:var(--text);
+  border-bottom-color:var(--text);
+  transform:translateX(5px);
+}
+.cv-link-inline{
+  color:var(--muted2);
+  text-decoration:none;
+  transition:all 0.2s;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.cv-link-inline:hover{
+  color:var(--accent);
+  text-decoration:underline;
+}
 
 /* CERTIFICATES */
 #certificates{background:var(--bg2);}
@@ -622,5 +650,85 @@ footer{
   .cv-card{grid-template-columns:1fr;}
   .cv-left{border-right:none; border-bottom:1px solid var(--border2);}
   .cpanel.active{grid-template-columns:1fr; gap:32px;}
+}
+
+/* ═══ PRINT OPTIMIZATION ═══ */
+@media print {
+  /* Prevent sections breaking across pages */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    height: auto;
+    overflow: visible;
+    background: white !important;
+    color: black !important;
+  }
+
+  body::before,
+  nav, 
+  #cur, 
+  #cur-ring, 
+  #cur-glow,
+  .blob-1,
+  .blob-2,
+  .float-icon,
+  .hero-bg-glow,
+  .hero-bg-glow2,
+  .hero-img-glow,
+  .about-img-glow,
+  .edu-card-glow,
+  .cert-top-glow,
+  .sec-divider,
+  .nav-btn,
+  .hero-btns,
+  .form-submit,
+  .cert-btn,
+  .soc-btn { 
+    display: none !important; 
+  }
+
+  section {
+    page-break-after: always;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 40px 20px !important;
+  }
+
+  div {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure all content is visible (disable reveal animations) */
+  .reveal { 
+    opacity: 1 !important; 
+    transform: none !important; 
+    visibility: visible !important;
+    transition: none !important;
+  }
+
+  /* Animation & Glass Effect Fixes */
+  .animate,
+  video,
+  canvas,
+  .hero-img-ring,
+  .hero-img-ring2 {
+    display: none !important;
+  }
+
+  /* Keep links clickable and visible */
+  a {
+    color: var(--accent) !important;
+    text-decoration: underline !important;
+  }
+
+  .cv-card, .edu-card, .cert-card, .process-card {
+    border: 1px solid #eee !important;
+    box-shadow: none !important;
+    background: white !important;
+    break-inside: avoid !important;
+  }
 }
 

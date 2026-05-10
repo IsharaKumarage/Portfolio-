@@ -16,6 +16,9 @@
   --font-h:'Plus Jakarta Sans',sans-serif;
   --font-b:'Plus Jakarta Sans',sans-serif;
   --nav-bg: rgba(255, 255, 255, 0.85);
+  --glass-card: rgba(255, 255, 255, 0.95);
+  --glass-card-2: rgba(255, 255, 255, 0.7);
+  --glass-card-3: rgba(255, 255, 255, 0.4);
 }
 
 [data-theme="dark"] {
@@ -29,6 +32,9 @@
   --border2: rgba(255,255,255,0.08);
   --glass: rgba(255,255,255,0.04);
   --nav-bg: rgba(5, 5, 8, 0.85);
+  --glass-card: rgba(14, 14, 18, 0.95);
+  --glass-card-2: rgba(22, 22, 29, 0.8);
+  --glass-card-3: rgba(255, 255, 255, 0.05);
 }
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--font-b);overflow-x:hidden;cursor:none;transition:background 0.3s, color 0.3s;}
@@ -206,7 +212,7 @@ nav.scrolled{
 
 .hero-glass-card{
   display:inline-flex;align-items:center;gap:16px;
-  background:rgba(255,255,255,0.4);
+  background:var(--glass-card-3);
   backdrop-filter:blur(16px);
   border:1px solid var(--border);
   padding:16px 24px;border-radius:12px;
@@ -223,7 +229,7 @@ nav.scrolled{
   position:absolute;bottom:0;left:0;right:0;
   display:flex;align-items:stretch;
   border-top:1px solid var(--border2);
-  background:rgba(255,255,255,0.5);
+  background:var(--glass-card-3);
   z-index:2;
   animation:fadeUp 0.8s 0.6s ease both;
 }
@@ -274,7 +280,7 @@ nav.scrolled{
 .hero-img-box:hover img{transform:scale(1.03);opacity:1;}
 .hero-img-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(255,255,255,0.4) 0%,transparent 40%);
+  background:linear-gradient(to top, var(--glass-card-3) 0%, transparent 40%);
   pointer-events:none;
 }
 .hero-img-glow{
@@ -285,7 +291,7 @@ nav.scrolled{
 }
 .hero-float-badge{
   position:absolute;top:32px;left:-48px;
-  background:rgba(255,255,255,0.95);
+  background:var(--glass-card);
   border:1px solid var(--border2);
   backdrop-filter:blur(12px);
   padding:16px 20px;border-radius:10px;
@@ -296,7 +302,7 @@ nav.scrolled{
 .hfb-lbl{font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
 .hero-float-badge2{
   position:absolute;bottom:60px;right:-48px;
-  background:rgba(255,255,255,0.95);
+  background:var(--glass-card);
   border:1px solid var(--border2);
   backdrop-filter:blur(12px);
   padding:16px 20px;border-radius:10px;
@@ -353,7 +359,7 @@ section{padding:110px 64px;position:relative;z-index:1;}
 }
 .about-quote-box{
   position:absolute;bottom:-24px;right:-24px;
-  background:rgba(255,255,255,0.95);border:1px solid var(--border2);
+  background:var(--glass-card);border:1px solid var(--border2);
   backdrop-filter:blur(12px);padding:20px 22px;border-radius:10px;
   max-width:240px;box-shadow:0 12px 32px rgba(0,0,0,0.05);
 }
@@ -376,7 +382,7 @@ section{padding:110px 64px;position:relative;z-index:1;}
 #education{background:var(--bg);}
 .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .edu-card{
-  background:rgba(255,255,255,0.7);
+  background:var(--glass-card-2);
   backdrop-filter:blur(10px);
   border:1px solid var(--border);
   border-radius:12px;padding:30px;position:relative;overflow:hidden;
@@ -536,7 +542,7 @@ section{padding:110px 64px;position:relative;z-index:1;}
 #certificates{background:var(--bg2);}
 .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .cert-card{
-  background:rgba(255,255,255,0.7);
+  background:var(--glass-card-2);
   backdrop-filter:blur(10px);
   border:1px solid var(--border);border-radius:12px;
   overflow:hidden;
@@ -689,19 +695,22 @@ footer{
 
 /* ═══ PRINT OPTIMIZATION ═══ */
 @media print {
-  /* Prevent sections breaking across pages */
+  /* Force high quality colors */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    break-inside: auto !important;
   }
 
   html, body {
     height: auto;
     overflow: visible;
     background: white !important;
-    color: black !important;
+    color: #111 !important;
+    font-size: 11pt; /* Professional print size */
   }
 
+  /* Hide web-only elements */
   body::before,
   nav, 
   #cur, 
@@ -718,10 +727,12 @@ footer{
   .cert-top-glow,
   .sec-divider,
   .nav-btn,
+  .theme-btn,
   .hero-btns,
   .form-submit,
   .cert-btn,
-  .soc-btn { 
+  .soc-btn,
+  .hero-img-overlay { 
     display: none !important; 
   }
 
@@ -729,14 +740,14 @@ footer{
     page-break-after: always;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
-    padding: 40px 20px !important;
+    padding: 20px 0 !important; /* Tighter padding for PDF */
   }
 
   div {
     page-break-inside: avoid;
   }
 
-  /* Ensure all content is visible (disable reveal animations) */
+  /* Ensure all content is visible */
   .reveal { 
     opacity: 1 !important; 
     transform: none !important; 
@@ -744,26 +755,47 @@ footer{
     transition: none !important;
   }
 
-  /* Animation & Glass Effect Fixes */
-  .animate,
-  video,
-  canvas,
-  .hero-img-ring,
-  .hero-img-ring2 {
-    display: none !important;
-  }
-
-  /* Keep links clickable and visible */
+  /* Keep links clickable and professional */
   a {
     color: var(--accent) !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
+    font-weight: 600;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #666;
+  }
+  
+  /* Don't show URL for internal anchors or buttons */
+  .soc-btn, .nav-links a, .hero-btns a, [href^="#"]::after {
+    content: "" !important;
   }
 
-  .cv-card, .edu-card, .cert-card, .process-card {
+  .cv-card {
     border: 1px solid #eee !important;
     box-shadow: none !important;
     background: white !important;
+    display: block !important; /* Stack for PDF */
+  }
+  
+  .cv-left {
+    border-right: none !important;
+    border-bottom: 1px solid #eee !important;
+    width: 100% !important;
+  }
+  
+  .cv-right {
+    width: 100% !important;
+  }
+
+  .edu-card, .cert-card, .process-card {
+    border: 1px solid #eee !important;
+    background: white !important;
     break-inside: avoid !important;
+    margin-bottom: 15px !important;
   }
 }
 
